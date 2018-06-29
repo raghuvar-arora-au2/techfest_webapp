@@ -1,0 +1,315 @@
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>animated hamburger</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Cinzel|Comfortaa|Marck+Script|Monoton|Montserrat|Pacifico|Prata|Questrial|Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" >
+    <link rel="stylesheet" type="text/css" href="menu.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+   <style media="screen">
+
+      body{
+        margin:0px;
+        padding: 0px;
+        background-color:rgb(250, 252, 179);   }
+    </style>
+  </head>
+    <body>
+    <header class="header">
+      <figure class="logo">
+        <img src="logo.png" alt="festlogo">
+      </figure>
+      <h1 class="heading1">The Fest</h1>
+      <div class="icon">
+        <div class="hamburger">
+
+        </div>
+      </div>
+    </header>
+
+   <main class="main">
+	
+	 <h1 id="evehead">Events</h1>
+     <div id="object1" class="objects">
+       <i class="fas fa-laptop"></i>
+     </div>
+     <div id="object2" class="objects">
+      <i class="fab fa-android"></i>
+     </div>
+     <div id="object3"class="objects">
+        <i class="fas fa-code"></i>
+     </div>
+     <div id="object4" class="objects">
+       <i class="fas fa-cloud"></i>
+     </div>
+     <div id="object5" class="objects">
+       <i class="fas fa-drum"></i>
+     </div>
+     <div id="object6" class="objects">
+       <i class="fas fa-gift"></i>
+     </div>
+
+   </main>
+    <div class="menu">
+      <ul>
+        <li> <a href="index.html">Home</a> </li>
+        <li> <a href="events.html">Events</a> </li>
+        <li> <a href="#">Sponsors</a> </li>
+        <li> <a href="#">Register</a> </li>
+
+      </ul>
+	 
+
+    </div>
+	
+	<% events.forEach(function(event){ %>
+	<div class="event2">
+	<p class="codingchallenge"><%= event.name %> </p>
+	<img class=codeimg alt=CodingChallenge src= <%=event.image %>>
+	<h2><i>Types</i></h2>
+	
+	<div class="overlay">
+		<div class="rgbtn"> For More Info Click </div>
+		<a class="minfocode" href="codingchallenge.html">Here.</a>
+	</div>
+	</div>
+	<% }); %>
+	
+	
+	
+	
+	<!-- <div class="event2">
+	<p class="codingchallenge">2. Gaming Challenge </p>
+	<img class="codeimg2" alt="CodingChallenge" src="gimage.jpg">
+	<h2><i>Types</i></h2>
+	
+	<div class="overlay">
+		<div class="rgbtn"> For More Info Click </div>
+		<a class="minfogame" alt="Gaming Challenge" href="gamingchallenge.html">Here.</a>
+	</div>
+	</div>
+	
+	<div class="event3">
+	<p class="codingchallenge">3.Art & Craft Challenge </p>
+	<img class="codeimg3" alt="CodingChallenge" src="artimage.jpg">
+	<h2><i>Types</i></h2>
+	
+	<div class="overlay">
+		<div class="rgbtn"> For More Info Click </div>
+		<a class="minfoart" alt="Gaming Challenge" href="artchallenge.html"><b>Here.</b></a>
+	</div>
+	</div>
+	 -->
+
+	
+	
+	
+	
+		
+	
+	
+	
+	<STYLE>
+	
+   
+
+	
+	
+	
+	
+	
+	
+	#evehead{
+	text-align:center;
+	font-family: 'Bitter', serif;
+	font-size:55;
+	
+	
+	}
+	.codingchallenge{
+	position:relative;
+	top:0px;
+	left:25px;
+	color:black;
+	
+	
+	font-size:35px;
+	}
+	
+	
+	
+	.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+ 
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  -webkit-transform:scale(0);
+  transition: .3s ease;
+}
+
+.event1:hover .overlay {
+  transform: scale(1)
+}
+.event1:hover img{
+filter:blur(.2px) brightness(60%);
+    box-shadow:0 0 7px cyan;
+}
+.event1:hover{
+ box-shadow: 0 16px 16px 0 rgba(0,0,0,0.2);
+}
+
+.event2:hover .overlay {
+  transform: scale(1)
+}
+.event2:hover img{
+filter:blur(.2px) brightness(60%);
+    box-shadow:0 0 7px cyan;
+}
+.event2:hover{
+ box-shadow: 0 16px 16px 0 rgba(0,0,0,0.2);
+}
+.event3:hover .overlay {
+  transform: scale(1)
+}
+.event3:hover img{
+filter:blur(.2px) brightness(60%);
+    box-shadow:0 0 7px cyan;
+}
+.event3:hover{
+ box-shadow: 0 16px 16px 0 rgba(0,0,0,0.2);
+}
+
+
+.rgbtn {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  font-family:Calibiri;
+  cursor:default;
+}
+
+.minfocode {
+  color: #797BF2;
+  text-decoration:none;
+  font-size: 20px;
+  position: absolute;
+  top: 57%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  font-family:Calibiri;
+}
+.minfogame {
+  color: #797BF2;
+  text-decoration:none;
+  font-size: 20px;
+  position: absolute;
+  top: 57%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  font-family:Calibiri;
+}
+.minfoart {
+  color: #797BF2;
+  text-decoration:none;
+  font-size: 20px;
+  position: absolute;
+  top: 57%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  font-family:Calibiri;
+}
+	
+	
+	
+	
+	
+	.codeimg{
+	width: 370px;
+	height:280px;
+	margin-top:0px;
+    border: 4px solid gray;
+	background-position:center-left;
+	background-size:cover;
+	border-radius: 20px 20px 20px 20px;
+    
+	}
+	.codeimg2{
+	width: 370px;
+	height:280px;
+	margin-top:0px;
+    border: 4px solid gray;
+	background-position:center-left;
+	background-size:cover;
+	border-radius: 20px 20px 20px 20px;
+    
+	}
+	.codeimg3{
+	width: 370px;
+	height:280px;
+	margin-top:0px;
+    border: 4px solid gray;
+	background-position:center-left;
+	background-size:cover;
+	border-radius: 20px 20px 20px 20px;
+    
+	}
+	
+	
+	.event1{
+    margin: 0; 
+	position:absolute;
+	top:280px;
+	left:20px;
+	height:auto;
+	background:#F5F5E8;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+	border-radius: 20px; 
+	
+	}
+	.event2{
+    margin: 0; 
+	position:absolute;
+	top:280px;
+	left:480px;
+	height:auto;
+	background:#F5F5E8;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+	border-radius: 20px; 
+	
+	}
+	.event3{
+    margin: 0; 
+	position:absolute;
+	top:280px;
+	left:920px;
+	height:auto;
+	background:#F5F5E8;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+	border-radius: 20px; 
+	
+	}
+
+	</STYLE>
+
+  </body>
+</html>

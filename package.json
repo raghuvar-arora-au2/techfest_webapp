@@ -1,0 +1,20 @@
+{
+  "name": "techfest_webapp",
+  "version": "1.0.0",
+  "description": "This requires presence of NPM and Node.js on system.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://raghuvararora@bitbucket.org/fnatics/techfest_webapp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/fnatics/techfest_webapp#readme",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.3"
+  }
+}

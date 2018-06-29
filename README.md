@@ -1,14 +1,13 @@
 #Instructions to setup
 This requires presence of NPM and Node.js on system.
 
-To install these kindly refer to (https://docs.npmjs.com/getting-started/installing-node)
+To install these kindly refer to https://docs.npmjs.com/getting-started/installing-node
 
-1.) Clone this repo on your local system
+	1.) Clone this repo on your local system
 
-2.) Using a terminal switch to the folder where this repo is cloned and install following modules from npm.
+	2.) Using a terminal switch to the folder where this repo is cloned and install following modules from npm.
 
-    1.) Express  
-       ''' sudo npm install express'''
+		npm install
 
 
 
@@ -16,11 +15,13 @@ To install these kindly refer to (https://docs.npmjs.com/getting-started/install
 
 1.) Using the terminal type
 
-        '''node server.js '''
+        
+        node app.js 
+        
     
-        This will start the server at localhost and port 3000 by default
-        Make sure you are in the clonned repo while doing this
+    This will start the server at localhost and port 3000 by default
+    Make sure you are in the clonned repo while doing this
 
-2.) Now using a browser open 
+2.) Now using a browser open
 
-       '''http://localhost:3000/''' 
+       http://localhost:3000/
