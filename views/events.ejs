@@ -56,20 +56,21 @@
    </main>
    <div class="eventcontainer">
    <%events.forEach(function(event){  %>
-    <div class="event">
+   <div class="event">
     <h2 class="eveheading"> <%=event.name%> </h2>
 
     <img class="eveimg" alt=CodingChallenge src= "<%=event.image %>">
     <h3><i>Event description</i></h3>
-     <div class="overlay">
+    <div class="overlay">
        <div class="rgbtn"> For Info Click </div>
        <a class="minfo" href="codingchallenge.html">Here.</a>
-     </div>
-     <%if(curUser){%>
+        <%if(curUser){%>
      <form action="/<%=event.id %>" method="DELETE">
   	<button type="delete">delete</button>
      </form>
 	<%}%>
+     </div>
+    
     </div>
     <%}); %>
 
@@ -97,7 +98,7 @@
 <!--      <a class="minfo" alt="Gaming Challenge" href="artchallenge.html"><b>Here.</b></a>-->
 <!--    </div>-->
 <!--    </div>-->
-<!--   </div>-->
+  </div>
     <div class="menu">
       <ul>
         <li> <a href="/">Home</a> </li>

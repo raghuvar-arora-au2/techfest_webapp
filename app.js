@@ -1,6 +1,7 @@
-//TASK: make authentication work
+//TASK: make authentication work		--done
 //TASK: add routes to delete events    --done
 //TASK: modify /events for admin 	   --done
+//TASK: add routes to modify events
 //TASK: add route to add sponsors	    
 //TASK: refactor code to ES7
 
@@ -10,7 +11,7 @@ var bodyParser=require("body-parser");
 var mongoose=require("mongoose");
 var passport=require("passport");
 var LocalStrategy=require("passport-local").Strategy;
-var session=require("express-session");
+var sessions=require("express-session");
 var Admin=require("./models/admin.js")
 
 
@@ -40,7 +41,7 @@ const Event=mongoose.model("Event", eventSchema);
 //-------PASSPORT CONFIGURATION-------//
 
 
-app.use(session({secret:"a random sentence",
+app.use(sessions({secret:"a random sentece",
 				resave:false,
 				saveUninitialized:false}));
 
