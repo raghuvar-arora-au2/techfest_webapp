@@ -1,3 +1,9 @@
+//TASK: make authentication work
+//TASK: add routes to delete events    --done
+//TASK: modify /events for admin 	   --done
+//TASK: add route to add sponsors	    
+//TASK: refactor code to ES7
+
 let express=require("express");
 var app=express();
 var bodyParser=require("body-parser");
@@ -57,10 +63,10 @@ function isLoggedIn(req, res, next){
 
 app.get("/events", function(req, res){
 	//sample events
-	var events=[{"name":"painting","image":"/artimage.jpg"},
+	var events=[{"id":"1234", "name":"painting","image":"/artimage.jpg"},
 				{"name":"gaming","image":"/gimage.jpg"},
 				{"name":"coding challenge", "image":"/codeimage.png"}]
-	res.render("events", {events:events});
+	res.render("events", {events:events, curUser:req.user});
 })
 
 
@@ -109,6 +115,13 @@ app.post("/adminlogin", passport.authenticate("local",
 		function(req,res){
 			console.log(req.user, "hey");
 })
+
+app.delete("/:id",  function(req, res){
+	Admin.findByIdAndRemove(req.params.id, function(err){
+			res.redirect("/events");
+		}
+)})
+
 
 app.get("/events/new",isLoggedIn,  function(req, res){
 	res.render("newevent");

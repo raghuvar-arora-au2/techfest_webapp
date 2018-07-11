@@ -57,7 +57,7 @@
    <div class="eventcontainer">
    <%events.forEach(function(event){  %>
     <div class="event">
-    <h2 class="eveheading"> <%event.name%> </h2>
+    <h2 class="eveheading"> <%=event.name%> </h2>
 
     <img class="eveimg" alt=CodingChallenge src= "<%=event.image %>">
     <h3><i>Event description</i></h3>
@@ -65,7 +65,11 @@
        <div class="rgbtn"> For Info Click </div>
        <a class="minfo" href="codingchallenge.html">Here.</a>
      </div>
-
+     <%if(curUser){%>
+     <form action="/<%=event.id %>" method="DELETE">
+  	<button type="delete">delete</button>
+     </form>
+	<%}%>
     </div>
     <%}); %>
 
