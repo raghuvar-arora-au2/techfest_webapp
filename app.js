@@ -1,6 +1,8 @@
 //TASK: make authentication work		--done
-//TASK: add routes to delete events    --done
-//TASK: modify /events for admin 	   --done
+//TASK: add routes to delete events     --done
+//TASK: modify /events for admin 	    --done
+//TASK: make an event page to /:id
+//TASK: make app responsive.
 //TASK: add routes to modify events
 //TASK: add route to add sponsors	    
 //TASK: refactor code to ES7
@@ -64,10 +66,20 @@ function isLoggedIn(req, res, next){
 
 app.get("/events", function(req, res){
 	//sample events
-	var events=[{"id":"1234", "name":"painting","image":"/artimage.jpg"},
-				{"name":"gaming","image":"/gimage.jpg"},
-				{"name":"coding challenge", "image":"/codeimage.png"}]
-	res.render("events", {events:events, curUser:req.user});
+	// var events=[{"id":"1234", "name":"painting","image":"/artimage.jpg"},
+	// 			{"name":"gaming","image":"/gimage.jpg"},
+	// 			{"name":"coding challenge", "image":"/codeimage.png"}]
+
+	Event.find({}, function(err, events){
+		if(err){
+			res.redirect("/");
+		}
+		else{
+			res.render("events", {events:events, curUser:req.user});
+			console.log(events);
+		}
+	})
+	
 })
 
 
