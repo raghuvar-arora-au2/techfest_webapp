@@ -1,11 +1,14 @@
-//TASK: make authentication work		--done
-//TASK: add routes to delete events     --done
-//TASK: modify /events for admin 	    --done
-//TASK: make an event page to /:id
-//TASK: make app responsive.
-//TASK: add routes to modify events
-//TASK: add route to add sponsors	    
-//TASK: refactor code to ES7
+//TODO: make authentication work		--done
+//TODO: add routes to delete events     --done
+//TODO: modify /events for admin 	    --done
+//TODO: make an event page to /:id
+//TODO: make app responsive.
+//TODO: add routes to modify events
+//TODO: add route to add sponsors	    
+//TODO: refactor code to ES7
+
+
+//ISSUE: page not reloading after event deletion
 
 let express=require("express");
 var app=express();
@@ -69,14 +72,13 @@ app.get("/events", function(req, res){
 	// var events=[{"id":"1234", "name":"painting","image":"/artimage.jpg"},
 	// 			{"name":"gaming","image":"/gimage.jpg"},
 	// 			{"name":"coding challenge", "image":"/codeimage.png"}]
-
 	Event.find({}, function(err, events){
 		if(err){
 			res.redirect("/");
 		}
 		else{
 			res.render("events", {events:events, curUser:req.user});
-			console.log(events);
+			console.log("evenfdfsdfts");
 		}
 	})
 	
@@ -130,8 +132,10 @@ app.post("/adminlogin", passport.authenticate("local",
 })
 
 app.delete("/:id",  function(req, res){
-	Admin.findByIdAndRemove(req.params.id, function(err){
-			res.redirect("/events");
+	Event.findByIdAndRemove(req.params.id, function(err){
+			console.log(req.params.id);
+			res.redirect('back');
+
 		}
 )})
 

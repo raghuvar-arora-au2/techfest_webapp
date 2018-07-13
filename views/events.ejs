@@ -54,6 +54,7 @@
      </div>
 
    </main>
+   <%if(events){%>
    <div class="eventcontainer">
    <%events.forEach(function(event){  %>
    <div class="event">
@@ -65,14 +66,22 @@
        <div class="rgbtn"> For Info Click </div>
        <a class="minfo" href="codingchallenge.html">Here.</a>
         <%if(curUser){%>
-     <form action="/<%=event.id %>" method="DELETE">
-  	<button type="delete">delete</button>
-     </form>
+     <div id="demo">
+	<button type="button" onclick="<%=event.name%>()">DELETE</button>
+	</div>
+	<script>
+		function <%=event.name%>() {
+  			var xhttp = new XMLHttpRequest();
+  			xhttp.open("DELETE", "/<%=event.id%>");
+  			xhttp.send();
+		}
+	</script>
+     
 	<%}%>
      </div>
     
     </div>
-    <%}); %>
+    <%})}; %>
 
 
 
