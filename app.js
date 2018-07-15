@@ -6,6 +6,7 @@
 //TODO: add routes to modify events
 //TODO: add route to add sponsors	    
 //TODO: refactor code to ES7
+//TODO: introduce React
 
 
 //ISSUE: page not reloading after event deletion
